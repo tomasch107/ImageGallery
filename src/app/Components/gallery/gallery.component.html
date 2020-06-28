@@ -1,0 +1,16 @@
+<div class="row" *ngIf="!openPost">
+    <div *ngFor="let item of images" class="col-lg-6 col-12">
+        <div class="img-wrapper">
+            <div class="img-hover-zoom">
+                <img class="img-fluid img-center" src="{{item.downloadURL}}" (click)="openGalleryPost(item)" />
+                <div class="img-title text-center carousel-caption">
+                    <h1 class="display-4">{{item.galleryEntry.galleryPost.title}}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="openPost">
+    <app-gallery-post [image]="currentImage" (backToGallery)="openPost=false"></app-gallery-post>
+</div>

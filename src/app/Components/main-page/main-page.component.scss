@@ -1,0 +1,14 @@
+.banner {
+    background: url(../../../assets/images/andromeda.jpg) no-repeat center fixed;
+    position: relative;
+    background-color: black;
+    height: calc(100vh - 72px);
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-background-content {
+    position: relative;
+    z-index: 2;
+}

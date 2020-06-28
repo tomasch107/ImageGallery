@@ -1,0 +1,36 @@
+<div class="container">
+    <h3 class="display-4">Dodaj zdjęcie</h3>
+    <div class="dropzone" appDropzone (hovered)="toggleHover($event)" (dropped)="onDrop($event)" [class.hovering]="isHovering">
+        <h3>Upuść obraz</h3>
+    </div>
+
+    <h3>Pliki</h3>
+    <div *ngFor="let file of files; index as i">
+        <app-upload-task [file]="file" (someEvent)="deleteImage(i)" (uploadedImageData)="addUploadedUrls($event)"></app-upload-task>
+    </div>
+
+    <form [formGroup]="galleryPost" (ngSubmit)="onUploadGalleryPost()">
+        <div class="form-group">
+            <input id="inputTitle" formControlName="title" placeholder="Tytuł" required="true" autofocus="" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <textarea class="form-control" formControlName="description" placeholder="Opis" id="inputDescription" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <input id="inputTitle" formControlName="titlepl" placeholder="Tytuł polski" required="true" autofocus="" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <textarea class="form-control" formControlName="descriptionpl" placeholder="Opis polski" id="inputDescription" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <select class="form-control" id="exampleFormControlSelect1" required="true" formControlName="type">
+            <option [value]="type" *ngFor="let type of types"> {{type}}</option>
+        </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Umieść post</button>
+    </form>
+</div>
