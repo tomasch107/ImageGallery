@@ -26,6 +26,12 @@ export class UploadImageComponent implements OnInit {
     type: new FormControl(''),
     descriptionpl: new FormControl(''),
     titlepl: new FormControl(''),
+    telescope: new FormControl(''),
+    camera: new FormControl(''),
+    mount: new FormControl(''),
+    location: new FormControl(''),
+    time: new FormControl(''),
+    date: new FormControl('')
   });
   constructor(private galleryPostService: GalleryPostService, private router: Router) { }
 

@@ -18,4 +18,9 @@ export class GalleryPostService {
   getGalleriesPost(type: string){
     return this.db.collection<GalleryEntry>('galleryEntry', ref => ref.where('galleryPost.type', '==', type));
   }
+
+  getGalleryPostById(id: string){
+    return this.db.collection('galleryEntry').doc(id)
+    .valueChanges();
+  }
 }

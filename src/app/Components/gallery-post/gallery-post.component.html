@@ -1,1 +1,35 @@
-<img class="img-fluid img-center" src="{{image.galleryEntry.fileData[0].downloadURL}}" />
+<div class="text-center">
+    <img class="img-fluid img-center" src="{{image.fileData[0].downloadURL}}" />
+</div>
+<div class="container-xl">
+    <div class="display-4 text-center">{{image.galleryPost.title}}</div>
+    <br><br>
+    <p class="lead">
+        {{image.galleryPost.description}}
+    </p>
+    <br><br>
+    <dl class="row">
+        <dt class="col-sm-3">Telescope</dt>
+        <dd class="col-sm-9">{{image.galleryPost.telescope}}
+        </dd>
+
+        <dt class="col-sm-3">Camera</dt>
+        <dd class="col-sm-9">
+            {{image.galleryPost.camera}}
+        </dd>
+
+        <dt class="col-sm-3">Mount</dt>
+        <dd class="col-sm-9">{{image.galleryPost.mount}}</dd>
+
+        <dt class="col-sm-3 text-truncate">Location</dt>
+        <dd class="col-sm-9">{{image.galleryPost.location}}</dd>
+
+        <dt class="col-sm-3 text-truncate">Exposure</dt>
+        <dd class="col-sm-9">{{image.galleryPost.time}}</dd>
+
+        <dt class="col-sm-3 text-truncate">Date</dt>
+        <dd class="col-sm-9">{{image.galleryPost.date}}</dd>
+
+    </dl>
+
+</div>

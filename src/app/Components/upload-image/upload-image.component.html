@@ -31,6 +31,24 @@
             <option [value]="type" *ngFor="let type of types"> {{type}}</option>
         </select>
         </div>
+        <div class="form-group">
+            <input id="inputTelescope" formControlName="telescope" placeholder="Teleskop" required="true" autofocus="" class="form-control">
+        </div>
+        <div class="form-group">
+            <input id="inputCamera" formControlName="camera" placeholder="Kamera" required="true" autofocus="" class="form-control">
+        </div>
+        <div class="form-group">
+            <input id="inputMount" formControlName="mount" placeholder="Montaż" required="true" autofocus="" class="form-control">
+        </div>
+        <div class="form-group">
+            <input id="inputLocation" formControlName="location" placeholder="Lokacja" required="true" autofocus="" class="form-control">
+        </div>
+        <div class="form-group">
+            <input id="inputTime" formControlName="time" placeholder="Czas naświetlania" required="true" autofocus="" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="date" id="inputDate" formControlName="date" placeholder="date" required="true" autofocus="" class="form-control">
+        </div>
         <button type="submit" class="btn btn-primary btn-block">Umieść post</button>
     </form>
 </div>

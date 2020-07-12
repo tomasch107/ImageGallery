@@ -3,4 +3,5 @@ import { FileData } from './file-data';
 export interface GalleryEntry {
   fileData: FileData[];
   galleryPost: GalleryPost;
+  galleryId: string;
 }

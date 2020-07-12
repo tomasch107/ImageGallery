@@ -19,7 +19,7 @@ export class GalleryComponent implements OnInit{
   activeRoute: string;
 
   images: Array<{ downloadURL: string, galleryEntry: GalleryEntry }> = new Array();
-  currentImage: { downloadURL: string, galleryEntry: GalleryEntry };
+  currentImage: GalleryEntry;
   openPost = false;
 
   constructor(private galleryPostService: GalleryPostService, private storage: AngularFireStorage, private route: Router,) { }
@@ -29,7 +29,7 @@ export class GalleryComponent implements OnInit{
     this.activeRoute = this.activeRoute.charAt(0).toUpperCase() + this.activeRoute.slice(1);
 
     this.collection = this.galleryPostService.getGalleriesPost(this.activeRoute);
-    this.items = this.collection.valueChanges();
+    this.items = this.collection.valueChanges({ idField: 'galleryId' });
 
     this.items.subscribe(snapshots => {
       snapshots.forEach(snapshot => {
@@ -52,7 +52,7 @@ export class GalleryComponent implements OnInit{
   }
 
   openGalleryPost(image: { downloadURL: string, galleryEntry: GalleryEntry }){
-    this.currentImage = image;
-    this.openPost = true;
+    console.log (this.route.url);
+    this.route.navigate([ this.route.url + '/', image.galleryEntry.galleryId]);
   }
 }
