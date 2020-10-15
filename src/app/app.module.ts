@@ -19,6 +19,8 @@ import { UploadTaskComponent } from './Components/upload-task/upload-task.compon
 import { GalleryComponent } from './Components/gallery/gallery.component'
 import { LightboxModule } from 'ngx-lightbox';
 import { GalleryPostComponent } from './Components/gallery-post/gallery-post.component';
+import { OrderModule } from 'ngx-order-pipe';
+import { GalleryPostThumbnailComponent } from './Components/gallery-post-thumbnail/gallery-post-thumbnail.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { GalleryPostComponent } from './Components/gallery-post/gallery-post.com
     DropzoneDirective,
     UploadTaskComponent,
     GalleryComponent,
-    GalleryPostComponent
+    GalleryPostComponent,
+    GalleryPostThumbnailComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { GalleryPostComponent } from './Components/gallery-post/gallery-post.com
     AngularFirestoreModule,
     FormsModule,
     ReactiveFormsModule,
-    LightboxModule
+    LightboxModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

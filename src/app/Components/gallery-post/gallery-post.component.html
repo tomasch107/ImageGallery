@@ -1,35 +1,44 @@
-<div class="text-center">
-    <img class="img-fluid img-center" src="{{image.fileData[0].downloadURL}}" />
-</div>
-<div class="container-xl">
-    <div class="display-4 text-center">{{image.galleryPost.title}}</div>
+<div *ngIf="image">
+    <div class="text-center">
+        <img class="img-fluid img-center" src="{{image.fileData[0].downloadURL}}" />
+
+        <div *ngIf="image.fileData.length > 1">
+            <br><br>
+            <img class="img-fluid img-center" src="{{image.fileData[1].downloadURL}}" />
+        </div>
+    </div>
+    <div class="container-xl">
+        <br><br>
+        <div class="display-4 text-center">{{image.galleryPost.titlepl}}</div>
+        <br><br>
+        <p class="lead">{{image.galleryPost.descriptionpl}}</p>
+        <br><br> <br><br>
+
+        <div>
+            <img src="../assets/SVGs/telescope.svg" width="30" alt="" class="align-top mr-2">
+            <h5 class="d-inline-block">{{image.galleryPost.telescope}}</h5>
+        </div>
+        <div>
+            <img src="../assets/SVGs/camera.svg" width="30" alt="" class="align-top mr-2">
+            <h5 class="d-inline-block">{{image.galleryPost.camera}}</h5>
+        </div>
+        <div>
+            <img src="../assets/SVGs/tripod.svg" width="30" alt="" class="align-top mr-2">
+            <h5 class="d-inline-block">{{image.galleryPost.mount}}</h5>
+        </div>
+        <div>
+            <img src="../assets/SVGs/location.svg" width="30" alt="" class="align-top mr-2">
+            <h5 class="d-inline-block">
+                <a href="https://maps.google.com/?q={{image.galleryPost.location}}">{{image.galleryPost.location}}</a></h5>
+        </div>
+        <div>
+            <img src="../assets/SVGs/time.svg" width="30" alt="" class="align-top mr-2">
+            <h5 class="d-inline-block">{{image.galleryPost.time}} </h5>
+        </div>
+        <div>
+            <img src="../assets/SVGs/date.svg" width="30" alt="" class="align-top mr-2">
+            <h5 class="d-inline-block">{{image.galleryPost.date}} </h5>
+        </div>
+    </div>
     <br><br>
-    <p class="lead">
-        {{image.galleryPost.description}}
-    </p>
-    <br><br>
-    <dl class="row">
-        <dt class="col-sm-3">Telescope</dt>
-        <dd class="col-sm-9">{{image.galleryPost.telescope}}
-        </dd>
-
-        <dt class="col-sm-3">Camera</dt>
-        <dd class="col-sm-9">
-            {{image.galleryPost.camera}}
-        </dd>
-
-        <dt class="col-sm-3">Mount</dt>
-        <dd class="col-sm-9">{{image.galleryPost.mount}}</dd>
-
-        <dt class="col-sm-3 text-truncate">Location</dt>
-        <dd class="col-sm-9">{{image.galleryPost.location}}</dd>
-
-        <dt class="col-sm-3 text-truncate">Exposure</dt>
-        <dd class="col-sm-9">{{image.galleryPost.time}}</dd>
-
-        <dt class="col-sm-3 text-truncate">Date</dt>
-        <dd class="col-sm-9">{{image.galleryPost.date}}</dd>
-
-    </dl>
-
 </div>

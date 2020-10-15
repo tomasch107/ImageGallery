@@ -15,8 +15,11 @@ export class UploadImageComponent implements OnInit {
   types: string[] = [
     'Galaxies',
     'Nebulae',
-    'WideFiels',
-    'Others'
+    'Widefields',
+    'Milkyway',
+    'Clusters',
+    'Others',
+    'Solarsystem'
   ];
   filePaths: FileData[] = [];
   files: File[] = [];

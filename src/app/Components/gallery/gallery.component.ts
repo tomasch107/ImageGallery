@@ -22,7 +22,7 @@ export class GalleryComponent implements OnInit{
   currentImage: GalleryEntry;
   openPost = false;
 
-  constructor(private galleryPostService: GalleryPostService, private storage: AngularFireStorage, private route: Router,) { }
+  constructor(private galleryPostService: GalleryPostService, private storage: AngularFireStorage, private route: Router) { }
 
   ngOnInit(): void {
     this.activeRoute = this.route.url.replace('/', '');

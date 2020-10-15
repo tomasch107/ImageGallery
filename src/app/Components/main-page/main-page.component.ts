@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GalleryPostService } from 'src/app/Service/gallery-post.service';
 
 @Component({
   selector: 'app-main-page',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
-
-  constructor() { }
+  image;
+  constructor(private galleryPostService: GalleryPostService) { }
 
   ngOnInit(): void {
+    console.log(this.galleryPostService.getNewestGalleryPost().valueChanges());
+
+    this.galleryPostService.getNewestGalleryPost().valueChanges().subscribe(snapshots => {
+      this.image = snapshots;
+    }, error => {
+      console.log(error);
+    });
   }
 
 }

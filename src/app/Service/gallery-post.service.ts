@@ -23,4 +23,8 @@ export class GalleryPostService {
     return this.db.collection('galleryEntry').doc(id)
     .valueChanges();
   }
+
+  getNewestGalleryPost(){
+    return this.db.collection<GalleryEntry>('galleryEntry', ref => ref.orderBy('galleryPost.date', 'desc').limit(1));
+  }
 }

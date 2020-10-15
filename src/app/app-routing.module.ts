@@ -19,6 +19,16 @@ const routes: Routes = [
   { path: 'nebulae/:id', component: GalleryPostComponent},
   { path: 'galaxies', component: GalleryComponent},
   { path: 'galaxies/:id', component: GalleryPostComponent},
+  { path: 'widefields', component: GalleryComponent},
+  { path: 'widefields/:id', component: GalleryPostComponent},
+  { path: 'milkyway', component: GalleryComponent},
+  { path: 'milkyway/:id', component: GalleryPostComponent},
+  { path: 'clusters', component: GalleryComponent},
+  { path: 'clusters/:id', component: GalleryPostComponent},
+  { path: 'others', component: GalleryComponent},
+  { path: 'others/:id', component: GalleryPostComponent},
+  { path: 'solarsystem', component: GalleryComponent},
+  { path: 'solarsystem/:id', component: GalleryPostComponent},
 ];
 
 @NgModule({
